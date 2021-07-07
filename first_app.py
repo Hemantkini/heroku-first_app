@@ -9,12 +9,19 @@ from sklearn.datasets import load_iris
 from sklearn import tree
 import streamlit as st
 
+@st.cache
+def model():
+    X, y = load_iris(return_X_y=True)
+    clf = tree.DecisionTreeClassifier()
+    clf = clf.fit(X, y)	
+    
+    return clf
 
-X, y = load_iris(return_X_y=True)
-clf = tree.DecisionTreeClassifier()
-clf = clf.fit(X, y)
 
-dot_data  = tree.export_graphviz(clf, out_file=None)
+
+
+
+dot_data  = tree.export_graphviz(model(), out_file=None)
 
 st.graphviz_chart(dot_data)
 
