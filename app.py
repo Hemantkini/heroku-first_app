@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import streamlit as st
 
-st.title('Healthcare Prediction Team1')
+st.title('Healthcare Prediction -Patient stay in Hospital')
 # load dataset
 #df = pd.read_csv("train.csv")
 
@@ -23,7 +23,7 @@ st.title('Healthcare Prediction Team1')
 
 # markdown
 st.subheader('Making Prediction')
-st.markdown('**Please provide passenger information**:')  # you can use markdown like this
+st.markdown('**Please provide patient information**:')  # you can use markdown like this
 
 # load models
 tree_clf = joblib.load('2clf-best.pickle')
